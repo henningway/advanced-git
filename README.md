@@ -1,13 +1,16 @@
 # Advanced Git
 
-Learn advanced git concepts by solving interactive problems.
+Learn advanced git concepts by solving interactive exercises.
 
 ## Get Started
 
-Clone this repository, `make run`, pick a problem and go.
+Prerequisites: Requires Linux with Java (JDK 11 or above). [babashka](https://github.com/babashka/babashka) is installed
+ below.
+
+Clone this repository, `make install` (to get babashka, might require sudo to work), `make run`, pick a problem and go.
 
 ## TODO
 
-- more problems
-- guide users through problems
+- more exercises
+- guide users through exercises
 - allow users to check their solution via tests (`make test`)

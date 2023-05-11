@@ -1,3 +1,8 @@
+install:
+	chmod +x ./scripts/install.sh
+	./scripts/install.sh
+
 run:
-	chmod +x run.sh
-	./run.sh
+	bb src/core.clj;
+
+.PHONY: install run
