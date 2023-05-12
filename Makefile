@@ -2,7 +2,10 @@ install:
 	chmod +x ./scripts/install.sh
 	./scripts/install.sh
 
-run:
-	bb --classpath src -m agit.core;
+reset:
+	bb reset
 
-.PHONY: install run
+run:
+	bb run
+
+.PHONY: install reset run

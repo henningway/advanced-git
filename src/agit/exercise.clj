@@ -42,7 +42,6 @@
     key
     (println "That is not what I expected. Please try again.")))
 
-
 (defn format
   "Formats exercise for output during prompting."
   [exercise]
@@ -64,11 +63,16 @@
   (doseq [exercise exercises] (println (format exercise)))
   (cli/prompt-until-valid! #(read-key!)))
 
-(defn run!
+(defn init!
   "Runs given exercise by initializing a directory with the exercises' slug and running the handler function inside."
   [exercise]
   (some-> (fs/init-dir! (slug exercise))
           ((:handler exercise))))
+
+(defn remove!
+  "Removes the exercise by deleting its directory."
+  [exercise] 
+  (fs/remove-dir! (slug exercise)))
 
 (comment
   (resolve 1))

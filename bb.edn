@@ -1,0 +1,4 @@
+{:paths ["src"]
+ :tasks
+ {run agit.core/-main
+  reset agit.core/reset}}
