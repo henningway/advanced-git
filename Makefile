@@ -3,6 +3,6 @@ install:
 	./scripts/install.sh
 
 run:
-	bb src/core.clj;
+	bb --classpath src -m agit.core;
 
 .PHONY: install run
