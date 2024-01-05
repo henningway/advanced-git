@@ -14,8 +14,11 @@
   (git/add! dir)
   (git/stash! dir))
 
+(defn exercise-bisect! [dir]
+  (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git"))
+
 (def exercises
-  [{:key 1 :title "bisect" :handler (fn [dir] nil)}
+  [{:key 1 :title "bisect" :handler exercise-bisect!}
    {:key 2 :title "stash" :handler exercise-stash!}
    {:key 3 :title "reflog" :handler (fn [dir] nil)}
    {:key 4 :title "reset" :handler (fn [dir] nil)}])

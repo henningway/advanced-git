@@ -19,3 +19,8 @@
   "Runs `git stash` inside given directory."
   [dir]
   (sh/sh "git" "stash" :dir dir))
+
+(defn clone!
+  "Runs `git clone` inside given directory with given repository."
+  [dir repo]
+  (sh/sh "git" "clone" repo "." :dir dir))
