@@ -7,21 +7,29 @@
 
 (defn exercise-stash! [dir]
   (git/clone! dir "git@github.com:DasCapschen/git-workshop-stash-task.git")
-  (git/reset-head! dir 1)
+  (git/reset-head! dir 1 false)
   (git/stash! dir "local fix: use http, dont commit")
-  (git/reset-head! dir 1)
+  (git/reset-head! dir 1 false)
   (git/stash! dir "wip: load env vars from .env file")
-  (git/reset-head! dir 2)
+  (git/reset-head! dir 2 false)
   (git/add! dir "program.py")
   (git/remove-remote! dir "origin"))
 
 (defn exercise-bisect! [dir]
   (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git"))
 
+(defn exercise-reflog! [dir]
+  (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git")
+  (git/checkout! dir "disco")
+  (git/checkout! dir "master")
+  (git/remove-branch! dir "disco")
+  (git/reset-head! dir 1 true)
+  (git/remove-remote! dir "origin"))
+
 (def exercises
   [{:key 1 :title "bisect" :handler exercise-bisect!}
    {:key 2 :title "stash" :handler exercise-stash!}
-   {:key 3 :title "reflog" :handler (fn [dir] nil)}
+   {:key 3 :title "reflog" :handler exercise-reflog!}
    {:key 4 :title "reset" :handler (fn [dir] nil)}])
 
 (defn resolve
