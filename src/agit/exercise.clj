@@ -6,13 +6,14 @@
    [agit.fs :as fs]))
 
 (defn exercise-stash! [dir]
-  (git/init! dir)
-  (spit (str dir "/hello.txt") "hello")
-  (git/add! dir)
-  (git/commit! dir "added hello.txt")
-  (spit (str dir "/bye.txt") "bye")
-  (git/add! dir)
-  (git/stash! dir))
+  (git/clone! dir "git@github.com:DasCapschen/git-workshop-stash-task.git")
+  (git/reset-head! dir 1)
+  (git/stash! dir "local fix: use http, dont commit")
+  (git/reset-head! dir 1)
+  (git/stash! dir "wip: load env vars from .env file")
+  (git/reset-head! dir 2)
+  (git/add! dir "program.py")
+  (git/remove-remote! dir "origin"))
 
 (defn exercise-bisect! [dir]
   (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git"))
@@ -74,7 +75,7 @@
 
 (defn remove!
   "Removes the exercise by deleting its directory."
-  [exercise] 
+  [exercise]
   (fs/remove-dir! (slug exercise)))
 
 (comment
