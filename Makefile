@@ -1,11 +1,7 @@
-install:
-	chmod +x ./scripts/install.sh
-	./scripts/install.sh
+run:
+	.bin/bb exercise
 
 reset:
-	bb reset
-
-run:
-	bb run
+	.bin/bb reset
 
 .PHONY: install reset run
