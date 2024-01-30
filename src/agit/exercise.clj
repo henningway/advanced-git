@@ -15,9 +15,6 @@
   (git/add! dir "program.py")
   (git/remove-remote! dir "origin"))
 
-(defn exercise-bisect! [dir]
-  (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git"))
-
 (defn exercise-reflog! [dir]
   (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git")
   (git/checkout! dir "disco")
@@ -26,11 +23,19 @@
   (git/reset-head! dir 1 true)
   (git/remove-remote! dir "origin"))
 
+(defn exercise-interactive-rebase! [dir]
+  (git/clone! dir "git@github.com:DasCapschen/git-workshop-rebase-task.git")
+  (git/remove-remote! dir "origin"))
+
+(defn exercise-bisect! [dir]
+  (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git")
+  (git/remove-remote! dir "origin"))
+
 (def exercises
-  [{:key 1 :title "bisect" :handler exercise-bisect!}
-   {:key 2 :title "stash" :handler exercise-stash!}
-   {:key 3 :title "reflog" :handler exercise-reflog!}
-   {:key 4 :title "reset" :handler (fn [dir] nil)}])
+  [{:key 1 :title "stash" :handler exercise-stash!}
+   {:key 2 :title "reflog" :handler exercise-reflog!}
+   {:key 3 :title "interactive-rebase" :handler exercise-interactive-rebase!}
+   {:key 4 :title "bisect" :handler exercise-bisect!}])
 
 (defn resolve
   "Provides full exercise given a (string) key."
