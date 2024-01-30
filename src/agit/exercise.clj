@@ -6,7 +6,7 @@
    [agit.fs :as fs]))
 
 (defn exercise-stash! [dir]
-  (git/clone! dir "git@github.com:DasCapschen/git-workshop-stash-task.git")
+  (git/clone! dir "https://github.com/DasCapschen/git-workshop-stash-task.git")
   (git/reset-head! dir 1 false)
   (git/stash! dir "local fix: use http, dont commit")
   (git/reset-head! dir 1 false)
@@ -16,7 +16,7 @@
   (git/remove-remote! dir "origin"))
 
 (defn exercise-reflog! [dir]
-  (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git")
+  (git/clone! dir "https://github.com/henningway/HTML5-Asteroids.git")
   (git/checkout! dir "disco")
   (git/checkout! dir "master")
   (git/remove-branch! dir "disco")
@@ -24,11 +24,11 @@
   (git/remove-remote! dir "origin"))
 
 (defn exercise-interactive-rebase! [dir]
-  (git/clone! dir "git@github.com:DasCapschen/git-workshop-rebase-task.git")
+  (git/clone! dir "https://github.com/DasCapschen/git-workshop-rebase-task.git")
   (git/remove-remote! dir "origin"))
 
 (defn exercise-bisect! [dir]
-  (git/clone! dir "git@github.com:henningway/HTML5-Asteroids.git")
+  (git/clone! dir "https://github.com/henningway/HTML5-Asteroids.git")
   (git/remove-remote! dir "origin"))
 
 (def exercises
