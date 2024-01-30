@@ -12,8 +12,7 @@
   (git/reset-head! dir 1 false)
   (git/stash! dir "wip: load env vars from .env file")
   (git/reset-head! dir 2 false)
-  (git/add! dir "program.py")
-  (git/remove-remote! dir "origin"))
+  (git/add! dir "program.py"))
 
 (defn exercise-reflog! [dir]
   (git/clone! dir "https://github.com/henningway/HTML5-Asteroids.git")
@@ -24,8 +23,7 @@
   (git/remove-remote! dir "origin"))
 
 (defn exercise-interactive-rebase! [dir]
-  (git/clone! dir "https://github.com/DasCapschen/git-workshop-rebase-task.git")
-  (git/remove-remote! dir "origin"))
+  (git/clone! dir "https://github.com/DasCapschen/git-workshop-rebase-task.git"))
 
 (defn exercise-bisect! [dir]
   (git/clone! dir "https://github.com/henningway/HTML5-Asteroids.git")
