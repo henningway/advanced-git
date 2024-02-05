@@ -2,6 +2,8 @@
 
 Learn advanced git concepts by solving interactive exercises.
 
+I created this tool together with https://github.com/DasCapschen/ for a workshop at https://peerox.de.
+
 ## Get Started
 
 Clone this repository. Create a `.bin` directory inside the project. Go to
