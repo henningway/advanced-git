@@ -4,8 +4,6 @@ Learn advanced git concepts by solving interactive exercises.
 
 ## Get Started
 
-Prerequisites: Requires Linux with Java (JDK 11 or above).
-
 Clone this repository. Create a `.bin` directory inside the project. Go to
 https://github.com/babashka/babashka/releases/ and find a release in the range of [1.3.188, 1.4). Download the correct 
 binary for your platform (e.g. "babashka-1.3.188-linux-amd64.tar.gz") and unpack it inside the `.bin` directory so that
